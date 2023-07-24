@@ -5,6 +5,7 @@ import '../assets/css/main.scss'
 import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
 import config from 'react-reveal/globals';
+config({ ssrFadeout: true });
 
 
 const Main = () => {
