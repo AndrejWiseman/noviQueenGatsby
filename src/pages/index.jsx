@@ -1,12 +1,23 @@
 import * as React from "react"
+import Layout from "../components/Layout"
+import Main from '../components/Main'
+import '../assets/css/global.css'
 
-function Home() {
+
+export default function Home() {
+
   return (
       <>
-        <h1>Zdravo svete!</h1>
+        
+        <Layout>
+          <section>
+            <Main />
+          </section>
+        </Layout>
+
       </>
   )
 }
 
-export default Home
+
 
