@@ -5,17 +5,18 @@ import '../assets/css/main.scss'
 import Zoom from 'react-reveal/Zoom';
 import Slide from 'react-reveal/Slide';
 import config from 'react-reveal/globals';
-config({ ssrFadeout: true });
+
 
 
 const Main = () => {
+    config({ ssrFadeout: true });
     return (
         <>
             <div className='main'>
 
                 
 
-                <Zoom ssrFadeout>
+                <Zoom >
                     <h1>Proba #1</h1>
                 </Zoom>
 
@@ -27,7 +28,7 @@ const Main = () => {
 
             <div className='main2'>
 
-            <Slide bottom ssrFadeout>
+            <Slide bottom >
                     <h1>Natasaaaa</h1>
                 </Slide>
 
