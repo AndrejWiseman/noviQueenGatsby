@@ -1,7 +1,18 @@
 
 .main {
+    min-height: 100vh;
     .naslov{
         color: var(--kardinal-crvena);
-        
+
+    }
+}
+
+.main2 {
+    min-height: 100vh;
+    background-color: var(--zelena);
+    h2 {
+        font-size: 4rem;
+        text-align: center;
+        padding: 20rem;
     }
 }
