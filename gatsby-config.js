@@ -24,7 +24,7 @@ module.exports = {
         // The unique name for each instance
         name: `images`,
         // Path to the directory
-        path: `${__dirname}/src/assets/images/`,
+        path: `${__dirname}/src/assets/images`,
       },
     },
 
