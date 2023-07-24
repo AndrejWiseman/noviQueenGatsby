@@ -10,10 +10,12 @@
 .main2 {
     min-height: 100vh;
     background-color: var(--zelena);
+    overflow: hidden;
+    width: 100%;
 
     h2 {
         // font-size: 1rem;
         text-align: center;
-        padding: 20rem;
+        padding-top: 20rem;
     }
 }
