@@ -22,7 +22,9 @@ const Main = () => {
 
             <div className='main2'>
 
-                    <h1>Natasaaaa</h1>
+                    <h1 data-sal="slide-up"
+  data-sal-delay="300"
+  data-sal-easing="ease">Natasaaaa</h1>
 
         
                 
