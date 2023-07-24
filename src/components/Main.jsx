@@ -22,12 +22,12 @@ const Main = () => {
 
             <div className='main2'>
 
-                    <h2 data-sal="slide-right"
+                    <div data-sal="slide-right"
                     data-sal-delay="300"
                     data-sal-easing="ease"
                     >
-                        Natasaaaa
-                    </h2>
+                        <h2>Natasa!</h2>
+                    </div>
 
         
                 
