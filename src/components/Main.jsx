@@ -25,7 +25,7 @@ const Main = () => {
                     <div data-sal="slide-right"
                     data-sal-delay="300"
                     data-sal-easing="ease"
-                    >
+                    className='ime' >
                         <h2>Natasa!</h2>
                     </div>
 
