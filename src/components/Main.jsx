@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import '../assets/css/main.scss'
 
 
-import ScrollRevealTitle from '../components/ScrollReveal';
+// import ScrollRevealTitle from '../components/ScrollReveal';
 
 
 const Main = () => {
@@ -24,7 +24,7 @@ const Main = () => {
 
                 <h1>BlaBlaBla</h1>
 
-              <ScrollRevealTitle>Scroll Reveal Naslov</ScrollRevealTitle>
+              {/*<ScrollRevealTitle>Scroll Reveal Naslov</ScrollRevealTitle>*/}
                 
             </div>
 
@@ -43,9 +43,9 @@ const Main = () => {
 
               <h1  >Hi Mom!</h1>
 
-              <ScrollRevealTitle>
-                <h1>Zdravo Naticio moj</h1>
-              </ScrollRevealTitle>
+              {/*<ScrollRevealTitle>*/}
+              {/*  <h1>Zdravo Naticio moj</h1>*/}
+              {/*</ScrollRevealTitle>*/}
 
                 
             </div>
