@@ -1,0 +1,18 @@
+
+.loader-box{
+    height: 100vh;
+    /*display: flex;*/
+    position: fixed;
+    z-index: 999;
+    /*background-color: var(--crnaBg);*/
+}
+
+.loader {
+    /*background-color: var(--zlatna);*/
+
+
+    /*justify-content: center;*/
+    /*align-content: center;*/
+
+}
+

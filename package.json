@@ -13,8 +13,12 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.1",
     "gatsby": "^5.11.0",
     "gatsby-plugin-image": "^3.11.0",
+    "gatsby-plugin-nprogress": "^5.11.0",
     "gatsby-plugin-sass": "^6.11.0",
     "gatsby-plugin-scroll-reveal-with-new-react": "^0.0.8",
     "gatsby-plugin-sharp": "^5.11.0",
@@ -23,7 +27,9 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scroll-parallax": "^3.4.2",
-    "sass": "^1.64.1"
+    "sass": "^1.64.1",
+    "semantic-ui-css": "^2.5.0",
+    "semantic-ui-react": "^2.1.4"
   },
   "repository": {
     "type": "git",

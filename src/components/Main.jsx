@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'gatsby'
 import '../assets/css/main.scss'
 
 
@@ -14,7 +15,8 @@ const Main = () => {
 
                     <h1>Proba #1</h1>
 
-              
+
+              <Link to='/kontakt'><h3>Kontakt strana</h3></Link>
 
                 <h1>BlaBlaBla</h1>
                 

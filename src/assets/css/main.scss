@@ -1,4 +1,21 @@
 
+:root{
+    --zlatna: rgb(162, 126, 64);
+    --crna: #242424;
+    --bela: #eeeeee;
+    --crnaBg: #0d0d0d;
+    --bela2: #33526b;
+    --font1: 'Josefin Sans', sans-serif; /*h1-regular, h3-bold*/
+    --font2: 'Crimson Text', serif;  /*h2, body-text*/
+    --font3: "Lora", monospace;
+    --font4: "Roboto", sans-serif;
+    --font5: "Playfair Display", sans-serif;
+    --font6: "Hanken Grotesk", sans-serif;
+
+}
+
+
+
 .main {
     min-height: 100vh;
     .naslov{
