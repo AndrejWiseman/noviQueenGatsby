@@ -9,7 +9,7 @@ import 'aos/dist/aos.css'
 const Main = () => {
 
     useEffect( () => {
-      AOS.init({duration:1500})
+      AOS.init({duration:1200})
     }, [])
 
 
