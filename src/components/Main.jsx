@@ -22,7 +22,7 @@ const Main = () => {
 
               <Link to='/kontakt' ><h3>Kontakt strana</h3></Link>
 
-                <h1>BlaBlaBla</h1>
+                <h1 className="w3-animate-right">BlaBlaBla</h1>
 
               {/*<ScrollRevealTitle>Scroll Reveal Naslov</ScrollRevealTitle>*/}
                 
@@ -41,7 +41,7 @@ const Main = () => {
               {/*  <h1>Hi Mom!</h1>*/}
               {/*</AnimateIn>*/}
 
-              <h1  >Hi Mom!</h1>
+              <h1 className="w3-animate-right" >Hi Mom!</h1>
 
               {/*<ScrollRevealTitle>*/}
               {/*  <h1>Zdravo Naticio moj</h1>*/}

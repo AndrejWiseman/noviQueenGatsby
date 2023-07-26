@@ -21,8 +21,16 @@ export default function Home() {
 }
 
 
-export const Head = () => (
-    <Seo title="Pocetna strana" />
-)
+
+export function Head() {
+  return (
+      <>
+        <Seo title="Pocetnaa" />
+        <link rel="stylesheet" type="text/css" href={"https://www.w3schools.com/w3css/4/w3.css"} />
+      </>
+  )
+}
+
+
 
 
