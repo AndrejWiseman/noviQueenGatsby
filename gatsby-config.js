@@ -28,6 +28,24 @@ module.exports = {
         path: `${__dirname}/src/assets/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // The unique name for each instance
+        name: `images`,
+        // Path to the directory
+        path: `${__dirname}/static/images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        // The unique name for each instance
+        name: `md`,
+        // Path to the directory
+        path: `${__dirname}/content`,
+      },
+    },
 
 
     {
