@@ -20,6 +20,8 @@
     min-height: 100vh;
     .naslov{
         color: var(--kardinal-crvena);
+        text-align: center;
+        margin: 2rem;
 
     }
 }
@@ -27,19 +29,23 @@
 .main2 {
     min-height: 100vh;
     background-color: var(--zelena);
-    // overflow: hidden;
+     overflow: hidden;
     width: 100%;
 
-    .ime {
-        width: 100%;
 
-        h2 {
-            // font-size: 1rem;
-            text-align: center;
-            padding-top: 20rem;
-        }
-
+    h2 {
+        // font-size: 1rem;
+        text-align: center;
+        padding-top: 2rem;
+        color: var(--kardinal-crvena)
     }
 
     
+}
+
+.sekcija-kontakt {
+    h2{
+        text-align: center;
+        margin: 2rem;
+    }
 }
