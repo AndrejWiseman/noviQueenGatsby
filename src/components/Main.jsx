@@ -1,6 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import '../assets/css/main.scss'
+
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 
 // import ScrollRevealTitle from '../components/ScrollReveal';
@@ -8,48 +11,47 @@ import '../assets/css/main.scss'
 
 const Main = () => {
 
-
+    useEffect( () => {
+      AOS.init({duration:1500})
+    }, [])
 
 
     return (
-        <>
+        <div>
             <div className='main'>
 
                 
 
-                    <h1>Proba #1</h1>
+                    <h1 className="animation" data-aos="fade-left" >Proba #1</h1>
 
 
               <Link to='/kontakt' ><h3>Kontakt strana</h3></Link>
 
-                <h1 className="w3-animate-right">BlaBlaBla</h1>
+                <h1 className="w3-animate-right blabla">BlaBlaBla</h1>
 
               {/*<ScrollRevealTitle>Scroll Reveal Naslov</ScrollRevealTitle>*/}
                 
             </div>
 
+
+
             <div className='main2'>
 
-                    <div data-sal="slide-right"
-                    data-sal-delay="300"
-                    data-sal-easing="ease"
-                    className='ime' >
-                        <h2>Natasa!</h2>
-                    </div>
+              <h1  >Hi Mom!</h1>
 
-              {/*<AnimateIn distance={30} triggerOnce={false}>*/}
-              {/*  <h1>Hi Mom!</h1>*/}
-              {/*</AnimateIn>*/}
 
-              <h1 className="w3-animate-right" >Hi Mom!</h1>
+              <div data-aos="fade-left">
+                <h1>Zdravo</h1>
+              </div>
 
-              {/*<ScrollRevealTitle>*/}
-              {/*  <h1>Zdravo Naticio moj</h1>*/}
-              {/*</ScrollRevealTitle>*/}
+
+              <div className="animation" data-aos="fade-left">
+                <h1>Naticio!</h1>
+              </div>
 
                 
             </div>
-        </>
+        </div>
     )
 }
 

@@ -1,4 +1,5 @@
 import * as React from "react"
+import { Script } from 'gatsby'
 import Layout from "../components/Layout"
 import Main from '../components/Main'
 import '../assets/css/global.css'
@@ -16,6 +17,8 @@ export default function Home() {
           </section>
         </Layout>
 
+
+
       </>
   )
 }
@@ -26,7 +29,8 @@ export function Head() {
   return (
       <>
         <Seo title="Pocetnaa" />
-        <link rel="stylesheet" type="text/css" href={"https://www.w3schools.com/w3css/4/w3.css"} />
+        {/*<link rel="stylesheet" type="text/css" href={"https://www.w3schools.com/w3css/4/w3.css"} />*/}
+        <Script src="aos/dist/aos.js" />
       </>
   )
 }
