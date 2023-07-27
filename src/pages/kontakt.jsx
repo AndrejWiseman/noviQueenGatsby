@@ -4,6 +4,8 @@ import {Script, graphql } from "gatsby";
 import { Seo } from '../components/Seo'
 import '../assets/css/main.scss'
 
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
+
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
@@ -28,7 +30,16 @@ const Kontakt = ({data}) => {
           <hr/>
 
             {data.travelLocations.edges.map(({node}) => (
-                <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.location}</h2>
+                <>
+                  <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.location}</h2>
+
+                  <div className="slika">
+                    <GatsbyImage
+                        image={getImage(node.childMarkdownRemark.frontmatter.featured_image)}
+                        alt="slika"
+                    />
+                  </div>
+                </>
             ))}
 
 
@@ -64,6 +75,12 @@ export const query = graphql`
           childMarkdownRemark {
             frontmatter {
               location
+              travel_date
+              featured_image {
+                childImageSharp {
+                  gatsbyImageData
+                }
+              }
             }
           }
         }
