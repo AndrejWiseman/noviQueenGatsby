@@ -17,3 +17,15 @@ collections:
       - { label: "Travel Date", name: "travel-date", widget: "string" }
       - { label: "Featured Image", name: "featured-image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+  - name: "pesme"
+    preview: false
+    label: "Pesme"
+    folder: "content/pesme"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Naslov", name: "title", widget: "string" }
+      - { label: "Datum", name: "datum", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

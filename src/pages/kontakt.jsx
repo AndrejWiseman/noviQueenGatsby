@@ -32,6 +32,7 @@ const Kontakt = ({data}) => {
             {data.travelLocations.edges.map(({node}) => (
                 <>
                   <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.location}</h2>
+                  <h4 key={node.id} >{node.childMarkdownRemark.frontmatter.travel_date}</h4>
 
                   <div className="slika">
                     <GatsbyImage
@@ -39,6 +40,7 @@ const Kontakt = ({data}) => {
                         alt="slika"
                     />
                   </div>
+                  <hr/>
                 </>
             ))}
 
