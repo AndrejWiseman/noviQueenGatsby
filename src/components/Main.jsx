@@ -24,7 +24,7 @@ const Main = () => {
             </section>
 
             <section className="main2">
-              <h2 data-aos="fade-left">Ovo je kao sekcija 2</h2>
+              <h2 data-aos="fade-left" data-aos-once="true">Ovo je kao sekcija 2</h2>
             </section>
 
 

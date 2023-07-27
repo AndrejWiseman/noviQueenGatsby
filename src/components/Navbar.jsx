@@ -1,6 +1,6 @@
 import React from 'react'
-import {Link, Script} from 'gatsby'
-import Home from "../pages";
+import { Link } from 'gatsby'
+
 
 
 
@@ -23,7 +23,7 @@ export default function Navbar() {
                   <Link className="nav-link active" aria-current="page" to="/">Pocetna</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="kontakt">Kontakt</Link>
+                  <Link className="nav-link" to="/kontakt">Kontakt</Link>
                 </li>
 
               </ul>

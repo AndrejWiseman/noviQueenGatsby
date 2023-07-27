@@ -62,23 +62,6 @@ export default function Home() {
 }
 
 
-// export const query = graphql`
-//   query {
-//     file(extension: {eq: "jpg"}, name: {eq: "q1"}) {
-//       id
-//       name
-//       childImageSharp {
-//         fluid {
-//           src
-//         }
-//         gatsbyImageData(placeholder: BLURRED)
-//       }
-//     }
-//   }
-// `
-
-
-
 
 export function Head() {
   return (
