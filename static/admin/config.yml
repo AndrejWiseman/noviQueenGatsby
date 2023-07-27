@@ -28,4 +28,4 @@ collections:
     fields:
       - { label: "Naslov", name: "title", widget: "string" }
       - { label: "Datum", name: "datum", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "text" }
