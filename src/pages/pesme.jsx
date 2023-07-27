@@ -33,7 +33,9 @@ const Pesme = ({data}) => {
               <>
                 <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
                 <h4 key={node.id} >{node.childMarkdownRemark.frontmatter.datum}</h4>
-                <h5 key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</h5>
+                {/*<h5 key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</h5>*/}
+
+                <div dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html}} />
 
 
                 <hr/>
@@ -66,6 +68,7 @@ export default Pesme
 export const query = graphql`
   query {
     pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}}) {
+      totalCount
       edges {
         node {
           id
@@ -76,6 +79,7 @@ export const query = graphql`
               
             }
             rawMarkdownBody
+            html
           }
         }
       }
