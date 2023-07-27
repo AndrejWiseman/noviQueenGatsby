@@ -67,7 +67,7 @@ export default Kontakt
 
 export const query = graphql`
   query {
-    travelLocations: allFile(filter: {relativeDirectory: {eq: "travel-locations"}}) {
+    travelLocations: allFile(filter: {relativeDirectory: {eq: "travel-packages"}}) {
       totalCount
       edges {
         node {
