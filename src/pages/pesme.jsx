@@ -9,6 +9,8 @@ import '../assets/css/main.scss'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
+import ReactMarkdown from 'react-markdown';
+
 
 
 const Pesme = ({data}) => {
@@ -33,14 +35,15 @@ const Pesme = ({data}) => {
               <>
                 <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
                 <h4 key={node.id} >{node.childMarkdownRemark.frontmatter.datum}</h4>
-                {/*<h5 key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</h5>*/}
+
+                <ReactMarkdown key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</ReactMarkdown>
 
                 {/*<div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.htmlAst  }} />*/}
 
 
-                <div className="text-field">
-                  <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />
-                </div>
+                {/*<div className="text-field">*/}
+                {/*  <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />*/}
+                {/*</div>*/}
 
 
 
