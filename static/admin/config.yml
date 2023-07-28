@@ -28,4 +28,5 @@ collections:
     fields:
       - { label: "Naslov", name: "title", widget: "string" }
       - { label: "Datum", name: "datum", widget: "date", format: "D.M.YYYY." }
+      - { label: "Objavljeno", name: "objavljeno", widget: "string", required: false }
       - { label: "Body", name: "body", widget: "markdown" }
