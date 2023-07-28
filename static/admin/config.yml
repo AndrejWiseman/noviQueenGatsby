@@ -27,5 +27,5 @@ collections:
     slug: "{{slug}}"
     fields:
       - { label: "Naslov", name: "title", widget: "string" }
-      - { label: "Datum", name: "datum", widget: "date", format: "Do.MM.YYYY" }
+      - { label: "Datum", name: "datum", widget: "date", format: "D.M.YYYY." }
       - { label: "Content", name: "content", widget: "markdown" }
