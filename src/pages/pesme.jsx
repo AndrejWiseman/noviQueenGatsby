@@ -39,12 +39,10 @@ const Pesme = ({data}) => {
 
 
                 <div className="text-field">
-                  <p className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />
+                  <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />
                 </div>
 
-                {/*<div>*/}
-                {/*  <p>{node.childMarkdownRemark.rawMarkdownBody}</p>*/}
-                {/*</div>*/}
+
 
 
                 <hr/>
