@@ -35,7 +35,12 @@ const Pesme = ({data}) => {
                 <h4 key={node.id} >{node.childMarkdownRemark.frontmatter.datum}</h4>
                 {/*<h5 key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</h5>*/}
 
-                <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html}} />
+                <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />
+
+
+                <div>
+                  <h5 key={node.id} >{node.childMarkdownRemark.rawMarkdownBody }</h5>
+                </div>
 
 
                 <hr/>
