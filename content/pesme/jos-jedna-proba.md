@@ -1,5 +1,5 @@
 ---
-title: jos jedna proba !
+title: jos jedna proba
 datum: 29.7.2023.
 ---
 j﻿a\
