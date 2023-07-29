@@ -4,6 +4,7 @@ import {Script, graphql } from "gatsby";
 import { Seo } from '../components/Seo'
 import '../assets/css/main.scss'
 
+
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import AOS from 'aos'
@@ -43,6 +44,11 @@ const Kontakt = ({data}) => {
                   <hr/>
                 </>
             ))}
+
+
+
+
+
 
 
 

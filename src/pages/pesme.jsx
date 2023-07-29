@@ -1,15 +1,19 @@
 import React, {useEffect} from 'react'
 import Layout from "../components/Layout";
-import { Script, graphql } from "gatsby";
+import { Script, graphql, Link } from "gatsby";
 import { Seo } from '../components/Seo'
 import '../assets/css/main.scss'
+
+import slugify from 'slugify'
+
 
 // import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
+// import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 
 
@@ -31,26 +35,48 @@ const Pesme = ({data}) => {
 
           <hr/>
 
-          {data.pesme.edges.map(({node}) => (
-              <>
-                <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
-                <h4 key={node.id} >{node.childMarkdownRemark.frontmatter.datum}</h4>
-
-                <ReactMarkdown key={node.id} >{node.childMarkdownRemark.rawMarkdownBody}</ReactMarkdown>
-
-                {/*<div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.htmlAst  }} />*/}
 
 
-                {/*<div className="text-field">*/}
-                {/*  <div className="tekst" dangerouslySetInnerHTML={{ __html: node.childMarkdownRemark.html  }} />*/}
-                {/*</div>*/}
+          {/*<ul>*/}
+          {/*  {data.pesme.edges.map(({node}) => (*/}
+          {/*      <>*/}
+
+          {/*        <li><Link to=""><h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2></Link></li>*/}
+
+
+          {/*        /!*<h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>*!/*/}
+          {/*        /!*<h4 key={node.id} >{node.childMarkdownRemark.frontmatter.datum}</h4>*!/*/}
+
+          {/*        /!*<div className="text-field">*!/*/}
+          {/*        /!*  <ReactMarkdown key={node.id} className="text" >{node.childMarkdownRemark.rawMarkdownBody}</ReactMarkdown>*!/*/}
+          {/*        /!*</div>*!/*/}
+
+
+          {/*        <hr/>*/}
+          {/*      </>*/}
+          {/*  ))}*/}
+          {/*</ul>*/}
 
 
 
 
-                <hr/>
-              </>
-          ))}
+          {data.pesme.edges.map(({node}) => {
+
+
+            const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})
+
+            return (
+                <>
+
+                  <Link to={`/${slug}`}>
+                    <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
+                  </Link>
+
+
+                  <hr/>
+                </>
+            )
+          })}
 
 
 
@@ -77,7 +103,7 @@ export default Pesme
 
 export const query = graphql`
   query {
-    pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}}) {
+    pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}} sort: {childMarkdownRemark: {frontmatter: {datum: DESC}}}) {
       totalCount
       edges {
         node {
@@ -86,12 +112,9 @@ export const query = graphql`
             frontmatter {
               title
               datum
-              
             }
             rawMarkdownBody
-            html
-            htmlAst
-          }
+          } 
         }
       }
     }

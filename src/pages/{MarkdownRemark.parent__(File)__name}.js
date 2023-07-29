@@ -1,0 +1,47 @@
+import React from 'react'
+import { graphql} from "gatsby"
+
+import ReactMarkdown from 'react-markdown';
+
+
+const Page = ({ data }) => {
+
+  const title = data.markdownRemark.frontmatter.title
+  const datum = data.markdownRemark.frontmatter.datum
+  const text = data.markdownRemark.rawMarkdownBody
+
+
+  return (
+
+      <>
+        <h2>Template page</h2>
+
+        <h1>{title}</h1>
+        <h2>{datum}</h2>
+
+        <div className="text-field">
+          <ReactMarkdown key={data.markdownRemark.id} className="text" >
+            {text}
+          </ReactMarkdown>
+        </div>
+
+      </>
+  )
+}
+
+export default Page
+
+
+export const query = graphql`
+  query ($id: String) {
+    markdownRemark(id: {eq: $id}) {
+      html
+      id
+      rawMarkdownBody
+      frontmatter {
+        title
+        datum
+      }
+    }
+  }
+`
