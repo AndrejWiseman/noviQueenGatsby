@@ -1,5 +1,6 @@
 import React from 'react'
 import { graphql} from "gatsby"
+import '../assets/css/template.scss'
 
 import ReactMarkdown from 'react-markdown';
 
@@ -14,14 +15,14 @@ const Page = ({ data }) => {
 
   return (
 
-      <>
+      <div className="temp">
         <h2>Template page</h2>
 
         <h1>{title}</h1>
         <h2>{datum}</h2>
 
         <div className="text-field">
-          <ReactMarkdown key={data.markdownRemark.id} className="text" >
+          <ReactMarkdown key={data.markdownRemark.id} className="text">
             {text}
           </ReactMarkdown>
 
@@ -31,7 +32,7 @@ const Page = ({ data }) => {
 
         </div>
 
-      </>
+      </div>
   )
 }
 
