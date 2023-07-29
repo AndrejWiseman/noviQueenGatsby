@@ -32,7 +32,6 @@ const Page = ({ data }) => {
           </ReactMarkdown>
 
 
-
         </div>
 
 
