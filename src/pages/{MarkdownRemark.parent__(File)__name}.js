@@ -13,6 +13,11 @@ const Page = ({ data }) => {
   // const html = data.markdownRemark.html
 
 
+  // const printableText = html.replace(/(?:\r\n|\r|\n)/g, "<br />");
+
+  // const dangerousText = { __html: printableText };
+
+
   return (
 
       <div className="temp">
@@ -26,11 +31,18 @@ const Page = ({ data }) => {
             {text}
           </ReactMarkdown>
 
-
-          <div dangerouslySetInnerHTML={{ __html: text }} />
-
-
         </div>
+
+
+
+        {/*<p dangerouslySetInnerHTML={dangerousText} />*/}
+
+        {/*<div dangerouslySetInnerHTML={{ __html: text }} />*/}
+
+        {/*{text}*/}
+
+        {/*{html}*/}
+
 
       </div>
   )
