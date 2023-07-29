@@ -47,11 +47,6 @@ const Kontakt = ({data}) => {
 
 
 
-
-
-
-
-
         </section>
 
       </Layout>

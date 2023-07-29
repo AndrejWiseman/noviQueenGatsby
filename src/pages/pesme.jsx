@@ -7,13 +7,8 @@ import '../assets/css/main.scss'
 import slugify from 'slugify'
 
 
-// import { GatsbyImage, getImage } from "gatsby-plugin-image"
-
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-
-// import ReactMarkdown from 'react-markdown';
-// import {GatsbyImage, getImage} from "gatsby-plugin-image";
 
 
 

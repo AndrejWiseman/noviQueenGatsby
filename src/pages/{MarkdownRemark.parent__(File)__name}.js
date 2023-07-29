@@ -9,6 +9,7 @@ const Page = ({ data }) => {
   const title = data.markdownRemark.frontmatter.title
   const datum = data.markdownRemark.frontmatter.datum
   const text = data.markdownRemark.rawMarkdownBody
+  const html = data.markdownRemark.html
 
 
   return (
@@ -23,6 +24,11 @@ const Page = ({ data }) => {
           <ReactMarkdown key={data.markdownRemark.id} className="text" >
             {text}
           </ReactMarkdown>
+
+
+          <div dangerouslySetInnerHTML={{ __html: html }} />
+
+
         </div>
 
       </>
