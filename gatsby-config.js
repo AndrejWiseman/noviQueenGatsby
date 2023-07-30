@@ -16,7 +16,14 @@ module.exports = {
     `gatsby-plugin-netlify-cms`,
 
 
-    
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `wo7a9bdetm38`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: `fs9TE1Zfprg8NL3KrO0TeP0QcqTZeqWQZd4ZU9NOaVk`,
+      },
+    },
 
 
 

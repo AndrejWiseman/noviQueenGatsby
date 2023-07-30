@@ -26,7 +26,7 @@ const Pesme = ({data}) => {
 
           <hr/><hr/><hr/>
 
-          <h2>{data.pesme.totalCount}</h2>
+          {/*<h2>{data.pesme.totalCount}</h2>*/}
 
           <hr/>
 
@@ -54,17 +54,17 @@ const Pesme = ({data}) => {
 
 
 
+          {data.allContentfulPesme.edges.map(({node}) => {
 
-          {data.pesme.edges.map(({node}) => {
+            // const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})
 
-
-            const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})
+            const slug = slugify(node.title, {lower:true})
 
             return (
                 <>
 
                   <Link to={`/${slug}`}>
-                    <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
+                    <h2 key={node.id} >{node.title}</h2>
                   </Link>
 
 
@@ -72,6 +72,26 @@ const Pesme = ({data}) => {
                 </>
             )
           })}
+
+
+
+
+          {/*{data.pesme.edges.map(({node}) => {*/}
+          {/*  */}
+          {/*  const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})*/}
+
+          {/*  return (*/}
+          {/*      <>*/}
+
+          {/*        <Link to={`/${slug}`}>*/}
+          {/*          <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>*/}
+          {/*        </Link>*/}
+
+
+          {/*        <hr/>*/}
+          {/*      </>*/}
+          {/*  )*/}
+          {/*})}*/}
 
 
 
@@ -95,26 +115,46 @@ export function Head() {
 export default Pesme
 
 
-
 export const query = graphql`
   query {
-    pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}} sort: {childMarkdownRemark: {frontmatter: {datum: DESC}}}) {
-      totalCount
+    allContentfulPesme {
       edges {
         node {
-          id
-          childMarkdownRemark {
-            frontmatter {
-              title
-              datum
+          datum
+          title
+          objavljeno
+          body {
+            childMarkdownRemark {
+              rawMarkdownBody
             }
-            rawMarkdownBody
-          } 
+          }
         }
       }
     }
   }
 `
+
+
+
+// export const query = graphql`
+//   query {
+//     pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}} sort: {childMarkdownRemark: {frontmatter: {datum: DESC}}}) {
+//       totalCount
+//       edges {
+//         node {
+//           id
+//           childMarkdownRemark {
+//             frontmatter {
+//               title
+//               datum
+//             }
+//             rawMarkdownBody
+//           }
+//         }
+//       }
+//     }
+//   }
+// `
 
 
 
