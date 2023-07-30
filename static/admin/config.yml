@@ -1,10 +1,10 @@
 backend:
-#  name: git-gateway
-#  branch: master
-  name: contentful
-  api_key: fs9TE1Zfprg8NL3KrO0TeP0QcqTZeqWQZd4ZU9NOaVk
-  space_id: wo7a9bdetm38
-  environment: master # Možete promeniti ako želite koristiti drugo okruženje
+  name: git-gateway
+  branch: master
+#  name: contentful
+#  api_key: fs9TE1Zfprg8NL3KrO0TeP0QcqTZeqWQZd4ZU9NOaVk
+#  space_id: wo7a9bdetm38
+#  environment: master # Možete promeniti ako želite koristiti drugo okruženje
 
 media_folder: static/images
 public_folder: ../../static/images
