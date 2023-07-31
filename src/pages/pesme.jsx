@@ -18,6 +18,11 @@ const Pesme = ({data}) => {
     AOS.init({duration:1500})
   }, [])
 
+
+
+  // const porukeData = data.allContentfulPoruke.edges[0].node.poruke.poruke
+
+
   return (
       <Layout>
         <section className="sekcija-kontakt">
@@ -54,17 +59,37 @@ const Pesme = ({data}) => {
 
 
 
-          {data.allContentfulPesme.edges.map(({node}) => {
+          {/*{data.allContentfulPesme.edges.map(({node}) => {*/}
 
-            // const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})
+          {/*  // const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})*/}
 
-            const slug = slugify(node.title, {lower:true})
+          {/*  const slug = slugify(node.title, {lower:true})*/}
+
+          {/*  return (*/}
+          {/*      <>*/}
+
+          {/*        <Link to={`/${slug}`}>*/}
+          {/*          <h2 key={node.id} >{node.title}</h2>*/}
+          {/*        </Link>*/}
+
+
+          {/*        <hr/>*/}
+          {/*      </>*/}
+          {/*  )*/}
+          {/*})}*/}
+
+
+
+
+          {data.pesme.edges.map(({node}) => {
+
+            const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})
 
             return (
                 <>
 
                   <Link to={`/${slug}`}>
-                    <h2 key={node.id} >{node.title}</h2>
+                    <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>
                   </Link>
 
 
@@ -74,24 +99,18 @@ const Pesme = ({data}) => {
           })}
 
 
+          <hr/><hr/>
 
 
-          {/*{data.pesme.edges.map(({node}) => {*/}
-          {/*  */}
-          {/*  const slug = slugify(node.childMarkdownRemark.frontmatter.title, {lower:true})*/}
 
-          {/*  return (*/}
-          {/*      <>*/}
-
-          {/*        <Link to={`/${slug}`}>*/}
-          {/*          <h2 key={node.id} >{node.childMarkdownRemark.frontmatter.title}</h2>*/}
-          {/*        </Link>*/}
-
-
-          {/*        <hr/>*/}
-          {/*      </>*/}
-          {/*  )*/}
-          {/*})}*/}
+          <div>
+            {data.allContentfulPoruke.edges[0].node.poruke.poruke.map(poruka => (
+                <div key={poruka.id}>
+                  <h3>{poruka.tekst}</h3>
+                  <p>{poruka.pisac}</p>
+                </div>
+            ))}
+          </div>
 
 
 
@@ -115,46 +134,41 @@ export function Head() {
 export default Pesme
 
 
+
 export const query = graphql`
   query {
-    allContentfulPesme {
+    pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}} sort: {childMarkdownRemark: {frontmatter: {datum: DESC}}}) {
+      totalCount
       edges {
         node {
-          datum
-          title
-          objavljeno
-          body {
-            childMarkdownRemark {
-              rawMarkdownBody
+          id
+          childMarkdownRemark {
+            frontmatter {
+              title
+              datum
+            }
+            rawMarkdownBody
+          }
+        }
+      }
+    }
+    
+    allContentfulPoruke {
+      edges {
+        node {
+          id
+          poruke {
+            poruke {
+              pisac
+              tekst
             }
           }
         }
       }
     }
   }
+  
 `
-
-
-
-// export const query = graphql`
-//   query {
-//     pesme: allFile(filter: {relativeDirectory: {eq: "pesme"}} sort: {childMarkdownRemark: {frontmatter: {datum: DESC}}}) {
-//       totalCount
-//       edges {
-//         node {
-//           id
-//           childMarkdownRemark {
-//             frontmatter {
-//               title
-//               datum
-//             }
-//             rawMarkdownBody
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
 
 
 
