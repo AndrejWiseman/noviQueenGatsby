@@ -72,6 +72,23 @@ module.exports = {
     },
 
 
+    {
+      resolve: "gatsby-plugin-firebase",
+      options: {
+        credentials: {
+          apiKey: "AIzaSyC-K0KfKc3yzmh73jq9wkusJt3ptxElbDY",
+          authDomain: "natasine-poruke.firebaseapp.com",
+          databaseURL: "https://natasine-poruke-default-rtdb.europe-west1.firebasedatabase.app",
+          projectId: "natasine-poruke",
+          storageBucket: "natasine-poruke.appspot.com",
+          messagingSenderId: "445616691171",
+          appId: "1:445616691171:web:868cedbd26349f5d8ff2d6",
+          // measurementId: "G-W9R3TLSDPG"
+        }
+      }
+    }
+
+
 
 
 

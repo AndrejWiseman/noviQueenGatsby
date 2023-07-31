@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState } from 'react'
 import Layout from "../components/Layout";
 import { Script, graphql, Link } from "gatsby";
 import { Seo } from '../components/Seo'
@@ -11,8 +11,18 @@ import AOS from 'aos'
 import 'aos/dist/aos.css'
 
 
+import { get, set } from "local-storage";
+
 
 const Pesme = ({data}) => {
+
+
+
+  const quotes = data.allContentfulPoruke.edges[0].node.poruke.poruke.map(poruka => (poruka.tekst))
+
+  const [currentQuote, setCurrentQuote] = useState(get("currentQuote") || "");
+
+
 
   useEffect( () => {
     AOS.init({duration:1500})
@@ -20,13 +30,40 @@ const Pesme = ({data}) => {
 
 
 
-  // const porukeData = data.allContentfulPoruke.edges[0].node.poruke.poruke
+
+
+
+  useEffect(() => {
+    // Function to set a random quote
+    const setRandomQuote = () => {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      const newQuote = quotes[randomIndex];
+      setCurrentQuote(newQuote);
+      set("currentQuote", newQuote);
+    };
+
+    // Set a random quote initially if LocalStorage is empty
+    if (!currentQuote) {
+      setRandomQuote();
+    }
+
+    // Set a new random quote every minute
+    const intervalId = setInterval(() => setRandomQuote(), 60000);
+
+    // Cleanup function to clear the interval when the component unmounts
+    return () => clearInterval(intervalId);
+  }, [quotes, currentQuote]);
+
+
 
 
   return (
       <Layout>
         <section className="sekcija-kontakt">
           <h2 data-aos="slide-down">Kolekcija pesama</h2>
+
+
+          <h2>{currentQuote}</h2>
 
 
           <hr/><hr/><hr/>
@@ -102,15 +139,17 @@ const Pesme = ({data}) => {
           <hr/><hr/>
 
 
+{/*ovaj je dobar kod*/}
+{/*          <div>*/}
+{/*            {data.allContentfulPoruke.edges[0].node.poruke.poruke.map(poruka => (*/}
+{/*                <div key={poruka.id}>*/}
+{/*                  <h3>{poruka.tekst}</h3>*/}
+{/*                  <p>{poruka.pisac}</p>*/}
+{/*                </div>*/}
+{/*            ))}*/}
+{/*          </div>*/}
 
-          <div>
-            {data.allContentfulPoruke.edges[0].node.poruke.poruke.map(poruka => (
-                <div key={poruka.id}>
-                  <h3>{poruka.tekst}</h3>
-                  <p>{poruka.pisac}</p>
-                </div>
-            ))}
-          </div>
+
 
 
 
